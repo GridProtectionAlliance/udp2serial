@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "udp2serial": {
+      "commandName": "Project",
+      "commandLineArgs": "8900 COM3"
+    }
+  }
+}
