@@ -1,1 +1,9 @@
 theme: jekyll-theme-cayman
+title: udp2serial
+description: UDP to Serial Forwarder
+github:
+  repository_name: GridProtectionAlliance/udp2serial
+  owner_url: https://www.gridprotectionalliance.org
+  owner_name: Grid Protection Alliance
+plugins:
+  - jemoji
