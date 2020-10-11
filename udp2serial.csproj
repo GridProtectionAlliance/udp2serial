@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>1.1.0</Version>
-    <Description>Console application that takes data received on a UDP/IP socket and forwards it to a serial port.</Description>
+    <Version>1.2.0</Version>
+    <Description>Console application that forwards data received on UDP/IP socket to serial port.</Description>
     <Authors>J. Ritchie Carroll</Authors>
     <Company>Grid Protection Alliance</Company>
     <Product>Gemstone Tools</Product>
