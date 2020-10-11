@@ -2,8 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <Version>1.0.1</Version>
+    <Description>Console application that takes data received on a UDP/IP socket and forwards it to a serial port.</Description>
+    <Authors>J. Ritchie Carroll</Authors>
+    <Company>Grid Protection Alliance</Company>
+    <Product>Gemstone Tools</Product>
+    <Copyright>Copyright © 2020</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

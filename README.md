@@ -1,3 +1,5 @@
+[![udp2serial](udp2serial.png)](https://gridprotectionalliance.github.io/udp2serial/)
+
 # udp2serial
 This is a simple console application that takes data received on a UDP/IP socket and forwards it to a serial port.
 
@@ -7,19 +9,19 @@ udp2serial [options] UDPPort [COMPortID]
 ```
 
 ### Options
-* `--InterfaceIP`: Defines the IP of the network interface to use for the UDP socket. Use 0.0.0.0 to listen on all interfaces with IPv4 or ::0 for all interfaces with IPv6
-* `--BaudRate`: Defines the serial baud rate. Standard values: 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000, or 256000.
-* `--DataBits`: Defines the standard length of data bits per byte. Standard values: 5, 6, 7 or 8.
-* `--Parity`: Defines the parity-checking protocol. Value is one of: Even, Mark, None, Odd or Space.
-* `--StopBits`: Defines the standard number of stopbits per byte. Value is one of: None, One, OnePointFive or Two.
-* `--DtrEnable`: Defines the value that enables the Data Terminal Ready (DTR) signal during serial communication.
-* `--RtsEnable`: Defines the value indicating whether the Request to Send (RTS) signal is enabled during serial communication.
-* `--help` or `--?`: Shows usage.
+* `--InterfaceIP` (or `-i`): Defines the IP of the network interface to use for the UDP socket. Use 0.0.0.0 to listen on all interfaces with IPv4 or ::0 for all interfaces with IPv6
+* `--BaudRate` (or `-b`): Defines the serial baud rate. Standard values: 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000, or 256000.
+* `--DataBits` (or `-d`): Defines the standard length of data bits per byte. Standard values: 5, 6, 7 or 8.
+* `--Parity` (or `-p`): Defines the parity-checking protocol. Value is one of: Even, Mark, None, Odd or Space.
+* `--StopBits` (or `-s`): Defines the standard number of stopbits per byte. Value is one of: None, One, OnePointFive or Two.
+* `--DtrEnable` (or `-d`): Defines the value that enables the Data Terminal Ready (DTR) signal during serial communication.
+* `--RtsEnable` (or `-r`): Defines the value indicating whether the Request to Send (RTS) signal is enabled during serial communication.
+* `--help` (or `-?`): Shows usage.
 
 ## Examples
 * Forward UDP on 5505 to Windows serial port COM2 at 9600 baud:
 ```shell
-udp2serial --BaudRate=9600 5505 COM2
+udp2serial -b=9600 5505 COM2
 ```
 * Forward UDP on 8505 to Linux serial port /dev/ttyS2:
 ```shell
@@ -53,21 +55,21 @@ BaudRate=9600
 ; 7 or 8.
 ;DataBits=8
 
-; Defines the value that enables the Data Terminal Ready (DTR) signal during
-; serial communication.
-;DtrEnable=False
-
 ; Defines the parity-checking protocol. Value is one of: Even, Mark, None, Odd
 ; or Space.
 ;Parity=None
 
-; Defines the value indicating whether the Request to Send (RTS) signal is
-; enabled during serial communication.
-;RtsEnable=False
-
 ; Defines the standard number of stopbits per byte. Value is one of: None, One,
 ; OnePointFive or Two.
 ;StopBits=One
+
+; Defines the value that enables the Data Terminal Ready (DTR) signal during
+; serial communication.
+;DtrEnable=False
+
+; Defines the value indicating whether the Request to Send (RTS) signal is
+; enabled during serial communication.
+;RtsEnable=False
 
 [UDP]
 ; Defines the IP of the network interface to use for the UDP socket. Use 0.0.0.0
