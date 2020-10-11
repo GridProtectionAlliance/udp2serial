@@ -10,16 +10,16 @@ udp2serial [options] UDPPort [COMPortID]
 
 ### Options
 
-| Short | Long          | Description |
-|:-----:| ------------- | ----------- |
-|  -i   | --InterfaceIP | Defines the IP of the network interface to use for the UDP socket. Use 0.0.0.0 to listen on all interfaces with IPv4 or ::0 for all interfaces with IPv6. |
-|  -b   | --BaudRate    | Defines the serial baud rate. Standard values: 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000, or 256000. |
-|  -d   | --DataBits    | Defines the standard length of data bits per byte. Standard values: 5, 6, 7 or 8. |
-|  -p   | --Parity      | Defines the parity-checking protocol. Value is one of: Even, Mark, None, Odd or Space. |
-|  -s   | --StopBits    | Defines the standard number of stopbits per byte. Value is one of: None, One, OnePointFive or Two. |
-|  -d   | --DtrEnable   | Defines boolean value, true or false, that enables the Data Terminal Ready (DTR) signal during serial communication. |
-|  -r   | --RtsEnable   | Defines boolean value, true or false, indicating whether the Request to Send (RTS) signal is enabled during serial communication. |
-|  -?   | --help        | Shows usage. |
+| Short | Long | Description |
+|:-----:| ---- | ----------- |
+| &#x2011;i | &#x2011;&#x2011;InterfaceIP | Defines the IP of the network interface to use for the UDP socket. Use 0.0.0.0 to listen on all interfaces with IPv4 or ::0 for all interfaces with IPv6. |
+| &#x2011;b | &#x2011;&#x2011;BaudRate | Defines the serial baud rate. Standard values: 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000, or 256000. |
+| &#x2011;d | &#x2011;&#x2011;DataBits | Defines the standard length of data bits per byte. Standard values: 5, 6, 7 or 8. |
+| &#x2011;p | &#x2011;&#x2011;Parity | Defines the parity-checking protocol. Value is one of: Even, Mark, None, Odd or Space. |
+| &#x2011;s | &#x2011;&#x2011;StopBits | Defines the standard number of stopbits per byte. Value is one of: None, One, OnePointFive or Two. |
+| &#x2011;d | &#x2011;&#x2011;DtrEnable | Defines boolean value, true or false, that enables the Data Terminal Ready (DTR) signal during serial communication. |
+| &#x2011;r | &#x2011;&#x2011;RtsEnable | Defines boolean value, true or false, indicating whether the Request to Send (RTS) signal is enabled during serial communication. |
+| &#x2011;? | &#x2011;&#x2011;help | Shows usage. |
 
 ## Examples
 * Forward UDP on 5505 to Windows serial port COM2 at 9600 baud:
