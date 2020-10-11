@@ -89,6 +89,7 @@ namespace udp2serial
         private static void DisconnectSerialPort()
         {
             s_serialPort.Close();
+            s_serialPort.Dispose();
         }
 
         private static UdpClient ConnectUDPClient()

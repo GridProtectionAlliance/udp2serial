@@ -110,7 +110,7 @@ namespace udp2serial
             ["-d"] = $"{SerialSection}:{nameof(DataBits)}",
             ["-p"] = $"{SerialSection}:{nameof(Parity)}",
             ["-s"] = $"{SerialSection}:{nameof(StopBits)}",
-            ["-d"] = $"{SerialSection}:{nameof(DtrEnable)}",
+            ["-t"] = $"{SerialSection}:{nameof(DtrEnable)}",
             ["-r"] = $"{SerialSection}:{nameof(RtsEnable)}"
         };
 
@@ -196,7 +196,7 @@ namespace udp2serial
             Console.WriteLine($"  -d, --{nameof(DataBits)}     Defines the standard length of data bits per byte, e.g.:  5, 6, 7 or 8");
             Console.WriteLine($"  -p, --{nameof(Parity)}       Defines the parity-checking protocol, one of: Even, Mark, None, Odd or Space");
             Console.WriteLine($"  -s, --{nameof(StopBits)}     Defines the standard number of stopbits per byte, one of: None, One, OnePointFive or Two");
-            Console.WriteLine($"  -d, --{nameof(DtrEnable)}    Defines boolean value that enables Data Terminal Ready signal, either: true or false");
+            Console.WriteLine($"  -t, --{nameof(DtrEnable)}    Defines boolean value that enables Data Terminal Ready signal, either: true or false");
             Console.WriteLine($"  -r, --{nameof(RtsEnable)}    Defines boolean value that enables Request to Send signal, either: true or false");
             Console.WriteLine("  -?, --help         Shows usage");
             Console.WriteLine();
