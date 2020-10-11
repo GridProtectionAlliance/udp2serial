@@ -116,7 +116,7 @@ namespace udp2serial
 
         public ExitCode Parse(string[] args)
         {
-            HashSet<string> optionArgs = args.Where(arg => arg.StartsWith('-') || arg.StartsWith('/')).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            HashSet<string> optionArgs = args.Where(arg => arg.StartsWith('-') || (arg.StartsWith('/') && !arg.StartsWith("/dev/"))).ToHashSet(StringComparer.OrdinalIgnoreCase);
             args = args.Where(arg => !optionArgs.Contains(arg)).ToArray();
 
             if (args.Length < 1 || args.Length > 2)
