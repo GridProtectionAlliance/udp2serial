@@ -95,7 +95,7 @@ namespace udp2serial
         {
             UdpClient udpClient = new UdpClient
             { 
-                ConnectionString = $"port={s_settings.UDPPort}; interface=0.0.0.0"
+                ConnectionString = $"port={s_settings.UDPPort}; interface={s_settings.InterfaceIP}"
             };
 
             udpClient.ConnectionAttempt += UdpClient_ConnectionAttempt;
