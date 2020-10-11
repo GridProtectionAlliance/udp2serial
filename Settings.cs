@@ -104,7 +104,14 @@ namespace udp2serial
             [$"--{nameof(Parity)}"] = $"{SerialSection}:{nameof(Parity)}",
             [$"--{nameof(StopBits)}"] = $"{SerialSection}:{nameof(StopBits)}",
             [$"--{nameof(DtrEnable)}"] = $"{SerialSection}:{nameof(DtrEnable)}",
-            [$"--{nameof(RtsEnable)}"] = $"{SerialSection}:{nameof(RtsEnable)}"
+            [$"--{nameof(RtsEnable)}"] = $"{SerialSection}:{nameof(RtsEnable)}",
+            ["-i"] = $"{UDPSection}:{nameof(InterfaceIP)}",
+            ["-b"] = $"{SerialSection}:{nameof(BaudRate)}",
+            ["-d"] = $"{SerialSection}:{nameof(DataBits)}",
+            ["-p"] = $"{SerialSection}:{nameof(Parity)}",
+            ["-s"] = $"{SerialSection}:{nameof(StopBits)}",
+            ["-d"] = $"{SerialSection}:{nameof(DtrEnable)}",
+            ["-r"] = $"{SerialSection}:{nameof(RtsEnable)}"
         };
 
         public ExitCode Parse(string[] args)
