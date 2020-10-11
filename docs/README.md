@@ -9,7 +9,7 @@ udp2serial [options] UDPPort [COMPortID]
 ```
 
 ### Options
-| Short | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description  |
+| Short | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description  |
 |:-----:| ------------ |--------------|
 |  -i  | --InterfaceIP | Defines the IP of the network interface to use for the UDP socket. Use 0.0.0.0 to listen on all interfaces with IPv4 or ::0 for all interfaces with IPv6. |
 |  -b  | --BaudRate    | Defines the serial baud rate. Standard values: 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000, or 256000. |
