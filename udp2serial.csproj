@@ -4,12 +4,13 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Description>Console application that takes data received on a UDP/IP socket and forwards it to a serial port.</Description>
     <Authors>J. Ritchie Carroll</Authors>
     <Company>Grid Protection Alliance</Company>
     <Product>Gemstone Tools</Product>
     <Copyright>Copyright © 2020</Copyright>
+    <ApplicationIcon>udp2serial.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
