@@ -16,8 +16,8 @@ udp2serial [options] UDPPort [COMPortID]
 | `-d` | `--DataBits` | Defines the standard length of data bits per byte. Standard values: 5, 6, 7 or 8. |
 | `-p` | `--Parity` | Defines the parity-checking protocol. Value is one of: Even, Mark, None, Odd or Space. |
 | `-s` | `--StopBits` | Defines the standard number of stopbits per byte. Value is one of: None, One, OnePointFive or Two. |
-| `-d` | `--DtrEnable` | Defines the value that enables the Data Terminal Ready (DTR) signal during serial communication. |
-| `-r` | `--RtsEnable` | Defines the value indicating whether the Request to Send (RTS) signal is enabled during serial communication. |
+| `-d` | `--DtrEnable` | Defines boolean value, true or false, that enables the Data Terminal Ready (DTR) signal during serial communication. |
+| `-r` | `--RtsEnable` | Defines boolean value, true or false, indicating whether the Request to Send (RTS) signal is enabled during serial communication. |
 | `-?` | `--help` | Shows usage. |
 
 ## Examples

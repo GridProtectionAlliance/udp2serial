@@ -55,11 +55,11 @@ namespace udp2serial
         public const bool DefaultDtrEnable = false;
         public const bool DefaultRtsEnable = false;
 
-        // Settings from command line
+        // Fixed postion settings from command line
         public ushort UDPPort { get; set; }
         public string COMPort { get; set; } = default!;
 
-        // Settings from config file
+        // Optional settings (defaults from config file)
         public string InterfaceIP { get; set; }
         public int BaudRate { get; set; }
         public int DataBits { get; set; }
@@ -125,7 +125,7 @@ namespace udp2serial
                 return InvalidCommandLineArgs;
             }
 
-            if (optionArgs.Contains("--help") || optionArgs.Contains("--?"))
+            if (optionArgs.Contains("--help") || optionArgs.Contains("-?") || optionArgs.Contains("/?"))
             {
                 ShowHelp();
                 return HelpDisplay;
@@ -151,7 +151,7 @@ namespace udp2serial
 
                     if (portNames.Length == 0)
                     {
-                        localPorts.Append("No local COM ports not found.");
+                        localPorts.Append("No local COM ports found.");
                     }
                     else
                     {
@@ -169,11 +169,11 @@ namespace udp2serial
             {
                 if (portNames.Length == 0)
                 {
-                    HandleError("No local COM ports not found.");
+                    HandleError("No local COM ports found.");
                     return NoCOMPortsFound;
                 }
 
-                COMPort = portNames.FirstOrDefault();
+                COMPort = portNames.FirstOrDefault() ?? "";
             }
 
             return Success;
@@ -190,23 +190,23 @@ namespace udp2serial
             Console.WriteLine("USAGE:");
             Console.WriteLine($"    {nameof(udp2serial)} [options] UDPPort [COMPortID]");
             Console.WriteLine();
+            Console.WriteLine("OPTIONS:");
+            Console.WriteLine($"  -i, --{nameof(InterfaceIP)}  Defines the IP of the network interface to use for UDP socket, e.g.: 0.0.0.0 or ::0");
+            Console.WriteLine($"  -b, --{nameof(BaudRate)}     Defines the serial baud rate, e.g.: 4800, 9600, 14400, 19200, 38400, 57600 or 115200");
+            Console.WriteLine($"  -d, --{nameof(DataBits)}     Defines the standard length of data bits per byte, e.g.:  5, 6, 7 or 8");
+            Console.WriteLine($"  -p, --{nameof(Parity)}       Defines the parity-checking protocol, one of: Even, Mark, None, Odd or Space");
+            Console.WriteLine($"  -s, --{nameof(StopBits)}     Defines the standard number of stopbits per byte, one of: None, One, OnePointFive or Two");
+            Console.WriteLine($"  -d, --{nameof(DtrEnable)}    Defines boolean value that enables Data Terminal Ready signal, either: true or false");
+            Console.WriteLine($"  -r, --{nameof(RtsEnable)}    Defines boolean value that enables Request to Send signal, either: true or false");
+            Console.WriteLine("  -?, --help         Shows usage");
+            Console.WriteLine();
             Console.WriteLine("EXAMPLES:");
             Console.WriteLine("  > Forward UDP on 5505 to Windows serial port COM2 at 9600 baud:");
-            Console.WriteLine($"       {nameof(udp2serial)} --BaudRate=9600 5505 COM2{Environment.NewLine}");
+            Console.WriteLine($"       {nameof(udp2serial)} -b=9600 5505 COM2{Environment.NewLine}");
             Console.WriteLine("  > Forward UDP on 8505 to Linux serial port /dev/ttyS2:");
             Console.WriteLine($"       {nameof(udp2serial)} 8505 /dev/ttyS2{Environment.NewLine}");
             Console.WriteLine("  > Forward UDP on port 6704 using IPv6 to first defined serial port:");
             Console.WriteLine($"       {nameof(udp2serial)} --InterfaceIP=::0 6704");
-            Console.WriteLine();
-            Console.WriteLine("OPTIONS:");
-            Console.WriteLine("  --InterfaceIP: Defines the IP of the network interface to use for the UDP socket.");
-            Console.WriteLine("  --BaudRate:    Defines the serial baud rate.");
-            Console.WriteLine("  --DataBits:    Defines the standard length of data bits per byte.");
-            Console.WriteLine("  --Parity:      Defines the parity-checking protocol.");
-            Console.WriteLine("  --StopBits:    Defines the standard number of stopbits per byte.");
-            Console.WriteLine("  --DtrEnable:   Defines the value that enables the Data Terminal Ready (DTR) signal.");
-            Console.WriteLine("  --RtsEnable:   Defines the value indicating whether the Request to Send (RTS) signal.");
-            Console.WriteLine("  --help or --?: Shows usage.");
         }
     }
 }
