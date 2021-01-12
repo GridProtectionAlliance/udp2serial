@@ -1,6 +1,5 @@
-[![udp2serial](udp2serial.png)](https://gridprotectionalliance.github.io/udp2serial/)
+[![udp2serial](https://gridprotectionalliance.org/images/products/productTitles75/UDP2Serial.png)](https://gridprotectionalliance.github.io/udp2serial/)
 
-# udp2serial
 This is a simple console application that takes data received on a UDP/IP socket and forwards it to a serial port.
 
 ## Usage
@@ -80,3 +79,4 @@ BaudRate=9600
 ;InterfaceIP=0.0.0.0
 InterfaceIP=::0
 ```
+![Logo](udp2serial.png)
